@@ -8,13 +8,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.9.1",
-    "coffeeify": "^1.0.0",
     "uglifyify": "^3.0.1"
-  },
-  "browserify": {
-    "transform": [
-      "coffeeify"
-    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
