@@ -37,14 +37,14 @@ class Oscilloscope
       analyser = source.context.createAnalyser()
       source.connect analyser
 
-    # TODO: existing analysers will be overidden?
+    # TODO: existing analysers will get fftSize overidden?
     analyser.fftSize = @timeDomain.length
 
     @signals.push
       analyser: analyser
       color: color or "#ffffff"
 
-    # auto-start when adding first signal
+    # auto-start when adding the first signal
     if @signals.length == 1
       @start()
 

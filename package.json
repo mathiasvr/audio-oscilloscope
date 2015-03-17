@@ -1,24 +1,32 @@
 {
-  "name": "Oscilloscope",
+  "name": "oscilloscope",
   "version": "0.1.0",
   "description": "",
-  "main": "index.js",
-  "browser": "index.coffee",
+  "main": "lib/index.js",
   "dependencies": {
     "debug": "^2.1.1"
   },
   "devDependencies": {
+    "coffee-script": "^1.9.1",
     "coffeeify": "^1.0.0",
     "uglifyify": "^3.0.1"
   },
   "browserify": {
-    "transform": [ "coffeeify" ]
+    "transform": [
+      "coffeeify"
+    ]
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify -g [uglifyify --no-sourcemap] example/main.js -o example/bundle.js",
-    "watch": "watchify example/main.js -o example/bundle.js --debug --verbose",
-    "prepublish": "browserify -s Oscilloscope -g [uglifyify --no-sourcemap] . -o oscilloscope.min.js"
+    "build-ex": "browserify -g [uglifyify --no-sourcemap] example/main.js -o example/bundle.js",
+    "watch-ex": "watchify example/main.js -o example/bundle.js --debug --verbose",
+    "build-min": "browserify -s oscilloscope -g [uglifyify --no-sourcemap] . -o oscilloscope.min.js",
+    "build": "coffee -o lib -c src",
+    "prepublish": "npm run build && npm run build-min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasvr/audio-oscilloscope.git"
   },
   "keywords": [
     "oscilloscope",

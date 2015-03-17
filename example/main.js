@@ -1,4 +1,4 @@
-Oscilloscope = require('..')
+var oscilloscope = require('..')
 
 // shim
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
@@ -18,14 +18,14 @@ var options = {
 }
 
 // attach oscilloscope
-var oscilloscope = new Oscilloscope(canvas, options)
+var scope = new oscilloscope(canvas, options)
 
 // get user microphone
 var constraints = { video: false, audio: true };
 
 navigator.getUserMedia(constraints, function(stream) {
   var source = context.createMediaStreamSource(stream)
-  oscilloscope.addSignal(source, '#00ffff')
+  scope.addSignal(source, '#00ffff')
 }, function (error) {
   console.error("getUserMedia error:", error);
 });

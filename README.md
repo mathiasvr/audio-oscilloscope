@@ -1,16 +1,18 @@
 # audio-oscilloscope
 Waveform audio visualizer using html5 canvas.
 
+Require the module with browserify, or simply include oscilloscope.min.js
+
 ## Methods
 
- * addSignal (source:AudioNode, color)
- * start ()
- * stop ()
+ * addSignal(source:AudioNode, color)
+ * start()
+ * stop()
 
 ## Example
 
 ```javascript
-Oscilloscope = require('..')
+oscilloscope = require('..')
 
 var context = new window.AudioContext()
 
@@ -26,13 +28,13 @@ var options = {
 }
 
 // attach oscilloscope
-var oscilloscope = new Oscilloscope(canvas, options)
+var scope = new Oscilloscope(canvas, options)
 
 // get user microphone
 var constraints = { video: false, audio: true };
 navigator.getUserMedia(constraints, function(stream) {
   var source = context.createMediaStreamSource(stream)
-  oscilloscope.addSignal(source, '#00ffff')
+  scope.addSignal(source, '#00ffff')
 }, function (error) {
   console.error("getUserMedia error:", error);
 });
