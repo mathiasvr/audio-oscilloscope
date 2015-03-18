@@ -12,7 +12,7 @@ Require the module with browserify, or simply include oscilloscope.min.js
 ## Example
 
 ```javascript
-oscilloscope = require('..')
+var oscilloscope = require('oscilloscope')
 
 var context = new window.AudioContext()
 
@@ -22,8 +22,8 @@ canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
 var options = {
-  stroke: 3,		// size of the wave
-  glow: 0.1,		// glowing effect
+  stroke: 3,    // size of the wave
+  glow: 0.1,    // glowing effect
   buffer: 1024  // buffer size ranging from 32 to 2048
 }
 
