@@ -3,21 +3,21 @@ debug = require("debug")("oscilloscope")
 class Oscilloscope
 
   # TODO: resize canvas without loosing context options.
-  constructor: (@canvas, options = { stroke: 2, glow: 0.0, buffer: 2048 }) ->
+  constructor: (@canvas, options = { }) ->
     return new Oscilloscope @canvas, options unless this instanceof Oscilloscope
 
     @signals = []
     @drawRequest = 0
 
     # reusable time-domain buffer (waveform data)
-    @timeDomain = new Uint8Array(options.buffer) # range 32 to 2048
+    @timeDomain = new Uint8Array(options.buffer || 1024) # range 32 to 32768
 
     # setup canvas drawing context
     @drawContext = @canvas.getContext("2d")
 
-    @drawContext.lineWidth = options.stroke
+    @drawContext.lineWidth = options.stroke || 2
     #TODO: can we just multiply right now.
-    @drawContext.shadowBlur = options.glow * 100
+    @drawContext.shadowBlur = (options.glow || 0) * 100
 
     # TODO: we may want to avoid this flip in the future.
     # flip the context to mimic a regular cartesian coordinate system
