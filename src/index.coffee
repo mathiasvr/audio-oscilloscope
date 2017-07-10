@@ -1,5 +1,3 @@
-debug = require("debug")("oscilloscope")
-
 class Oscilloscope
 
   constructor: (source, options = { }) ->
@@ -11,10 +9,8 @@ class Oscilloscope
       throw new Error "Signal must be an AudioNode"
 
     if source instanceof AnalyserNode
-      debug "add signal analyser"
       @analyser = source
     else
-      debug "add signal source"
       @analyser = source.context.createAnalyser()
       source.connect @analyser
 
@@ -30,12 +26,10 @@ class Oscilloscope
   # begin default signal animation
   animate: ->
     return if @drawRequest
-    debug "start animation"
     @drawRequest = window.requestAnimationFrame @_drawSignal
 
   # todo: stop signal animation
   stop: ->
-    debug "stop animation"
     cancelAnimationFrame @drawRequest
     @drawRequest = 0
     #@drawContext.clearRect 0, 0, @canvas.width, @canvas.height
