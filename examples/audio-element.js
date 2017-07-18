@@ -1,5 +1,3 @@
-var Oscilloscope = require('..')
-
 var audioContext = new window.AudioContext()
 
 // setup canvas
@@ -12,7 +10,7 @@ document.body.appendChild(canvas)
 var audioElement = document.createElement('audio')
 audioElement.controls = true
 audioElement.autoplay = true
-audioElement.src = 'loading.mp3'
+audioElement.src = 'audio.mp3'
 document.body.appendChild(audioElement)
 
 // create source from html5 audio element
@@ -27,7 +25,7 @@ source.connect(audioContext.destination)
 // customize drawing options
 var ctx = canvas.getContext('2d')
 ctx.lineWidth = 2
-//ctx.strokeStyle = '#ffffff'
+ctx.strokeStyle = '#ffffff'
 
 // start default animation loop
 scope.animate(ctx)

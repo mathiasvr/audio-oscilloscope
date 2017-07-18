@@ -1,17 +1,15 @@
-var Oscilloscope = require('..')
-
 var audioContext = new window.AudioContext()
 
 // setup canvas
 var canvas = document.createElement('canvas')
 canvas.width = window.innerWidth
-canvas.height = window.innerHeight - 50
+canvas.height = window.innerHeight
 document.body.appendChild(canvas)
 
 // setup audio element
 var audioElement = document.createElement('audio')
-audioElement.controls = true
-audioElement.src = 'loading.mp3'
+audioElement.autoplay = true
+audioElement.src = 'audio.mp3'
 document.body.appendChild(audioElement)
 
 // create source from html5 audio element
