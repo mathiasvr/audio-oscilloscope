@@ -1,4 +1,4 @@
-var oscilloscope = require('..')
+var Oscilloscope = require('..')
 
 var audioContext = new window.AudioContext()
 
@@ -18,29 +18,29 @@ document.body.appendChild(audioElement)
 var source = audioContext.createMediaElementSource(audioElement)
 
 // attach oscilloscope
-var scope = new oscilloscope(source)
+var scope = new Oscilloscope(source)
 
 // reconnect audio output to speakers
 source.connect(audioContext.destination)
 
 // todo make 'start' func in osc for this default stuff
-var ctx = canvas.getContext("2d")
+var ctx = canvas.getContext('2d')
 ctx.lineWidth = 3
 ctx.shadowBlur = 4
 ctx.shadowColor = 'white'
 
 // custom animation loop
-function drawLoop() {
+function drawLoop () {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
 
   var centerX = canvas.width / 2
   var centerY = canvas.height / 2
-  
+
   // draw circle
-  ctx.beginPath();
-  ctx.arc(centerX, centerY, 100, 0, 2 * Math.PI, false);
-  ctx.fillStyle = 'yellow';
-  ctx.fill();
+  ctx.beginPath()
+  ctx.arc(centerX, centerY, 100, 0, 2 * Math.PI, false)
+  ctx.fillStyle = 'yellow'
+  ctx.fill()
 
   // draw three oscilloscopes in different positions and colors
   ctx.strokeStyle = 'lime'
@@ -49,7 +49,7 @@ function drawLoop() {
   ctx.strokeStyle = 'cyan'
   scope.draw(ctx, centerX, 0, centerX, centerY)
 
-  ctx.strokeStyle =  'red'
+  ctx.strokeStyle = 'red'
   scope.draw(ctx, 0, centerY, null, centerY)
 
   window.requestAnimationFrame(drawLoop)

@@ -1,4 +1,4 @@
-var oscilloscope = require('..')
+var Oscilloscope = require('..')
 
 // shim
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
@@ -13,20 +13,20 @@ canvas.height = window.innerHeight
 document.body.appendChild(canvas)
 
 // customize drawing options
-var ctx = canvas.getContext("2d")
+var ctx = canvas.getContext('2d')
 ctx.lineWidth = 2
 ctx.strokeStyle = '#ffffff'
 
 // get user microphone
-var constraints = { video: false, audio: true };
-navigator.getUserMedia(constraints, function(stream) {
+var constraints = { video: false, audio: true }
+navigator.getUserMedia(constraints, function (stream) {
   var source = audioContext.createMediaStreamSource(stream)
-  
+
   // attach oscilloscope
-  var scope = new oscilloscope(source)
+  var scope = new Oscilloscope(source)
 
   // start default animation loop
   scope.animate(ctx)
 }, function (error) {
-  console.error("getUserMedia error:", error);
-});
+  console.error('getUserMedia error:', error)
+})

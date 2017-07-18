@@ -12,7 +12,7 @@ class Oscilloscope
       @analyser = source.context.createAnalyser()
       source.connect @analyser
 
-    @analyser.fftSize = options.fftSize if options.fftSize;  # range 32 to 32768
+    @analyser.fftSize = options.fftSize if options.fftSize
     @timeDomain = new Uint8Array(@analyser.frequencyBinCount)
     @drawRequest = 0
 

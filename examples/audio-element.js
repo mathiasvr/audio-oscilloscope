@@ -25,11 +25,9 @@ var scope = new Oscilloscope(source)
 source.connect(audioContext.destination)
 
 // customize drawing options
-var ctx = canvas.getContext("2d")
+var ctx = canvas.getContext('2d')
 ctx.lineWidth = 2
-ctx.strokeStyle = '#ffffff'
+//ctx.strokeStyle = '#ffffff'
 
 // start default animation loop
 scope.animate(ctx)
-
-//setTimeout(function(){scope.stop()}, 1000)
