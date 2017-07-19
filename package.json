@@ -1,26 +1,23 @@
 {
   "name": "oscilloscope",
-  "version": "0.2.1",
-  "description": "",
-  "main": "lib/index.js",
-  "dependencies": {
-    "debug": "^2.1.1"
-  },
+  "version": "1.0.0",
+  "description": "Waveform audio visualizer for the HTML5 canvas",
+  "main": "lib/oscilloscope.js",
+  "module": "src/main.js",
+  "dependencies": {},
   "devDependencies": {
-    "coffee-script": "^1.9.1",
-    "uglifyify": "^3.0.1"
+    "rollup": "^0.45.2",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-plugin-buble": "^0.15.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-ex": "browserify -g [uglifyify --no-sourcemap] example/main.js -o example/bundle.js",
-    "watch-ex": "watchify example/main.js -o example/bundle.js --debug --verbose",
-    "build-min": "browserify -s oscilloscope -g [uglifyify --no-sourcemap] . -o oscilloscope.min.js",
-    "build": "coffee -o lib -c src",
-    "prepublish": "npm run build && npm run build-min"
+    "test": "standard src/*.js && standard --global Oscilloscope examples/*.js",
+    "build": "rollup -c",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mathiasvr/audio-oscilloscope.git"
+    "url": "git+https://github.com/mathiasvr/audio-oscilloscope.git"
   },
   "keywords": [
     "oscilloscope",
@@ -31,5 +28,16 @@
     "MediaStream"
   ],
   "author": "Mathias Rasmussen",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mathiasvr/audio-oscilloscope/issues"
+  },
+  "homepage": "https://github.com/mathiasvr/audio-oscilloscope#readme",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ]
 }
