@@ -1,6 +1,6 @@
 {
   "name": "oscilloscope",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Waveform audio visualizer for the HTML5 canvas",
   "main": "lib/oscilloscope.js",
   "module": "src/main.js",
