@@ -6,6 +6,8 @@
 
 Waveform audio visualizer for the HTML5 canvas.
 
+![dependencies](wave.gif)
+
 ## install
 Add the `oscilloscope.min.js` script to your HTML, or import the module and bundle it for the browser with your favorite module bundler.
 ```bash
