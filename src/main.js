@@ -18,7 +18,9 @@ export default class Oscilloscope {
 
   // begin default signal animation
   animate (ctx, x0, y0, width, height) {
-    if (this.drawRequest) throw new Error('Oscilloscope animation is already running')
+    if (this.drawRequest) {
+      throw new Error('Oscilloscope animation is already running')
+    }
     this.ctx = ctx
     let drawLoop = () => {
       ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
