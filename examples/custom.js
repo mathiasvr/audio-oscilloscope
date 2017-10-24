@@ -21,7 +21,6 @@ var scope = new Oscilloscope(source)
 // reconnect audio output to speakers
 source.connect(audioContext.destination)
 
-// todo make 'start' func in osc for this default stuff
 var ctx = canvas.getContext('2d')
 ctx.lineWidth = 3
 ctx.shadowBlur = 4
