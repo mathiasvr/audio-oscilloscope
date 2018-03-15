@@ -1,8 +1,8 @@
 # oscilloscope
-[![npm](https://img.shields.io/npm/v/oscilloscope.svg)](https://www.npmjs.com/package/oscilloscope)
+[![npm](https://img.shields.io/npm/v/oscilloscope.svg)](https://npm.im/oscilloscope)
 ![downloads](https://img.shields.io/npm/dt/oscilloscope.svg)
-![dependencies](http://img.shields.io/:dependencies-none-green.svg)
-[![license](http://img.shields.io/:license-MIT-blue.svg)](http://mvr.mit-license.org)
+![dependencies](https://img.shields.io/:dependencies-none-green.svg)
+[![license](https://img.shields.io/:license-MIT-blue.svg)](https://mvr.mit-license.org)
 
 Waveform audio visualizer for the HTML5 canvas.
 
@@ -30,7 +30,7 @@ var scope = new Oscilloscope(source)
 scope.animate(canvas.getContext("2d"))
 ```
 
-> See the _examples_ folder for more details, and how to customize the animation.
+See the [examples](examples) folder for more details on how to customize the animation.
 
 ## usage
 ### `scope = new Oscilloscope(source [, { fftSize: 2048 }])`
@@ -45,4 +45,4 @@ Draw oscilloscope to a canvas `context`, and optionally set position and dimensi
 Start a basic animation loop that redraws the oscilloscope using the `.draw()` method.
 
 #### `scope.stop()`
-Stop the animation loop started by the `.start()` method.
+Stop the animation loop started by the `.animate()` method.
