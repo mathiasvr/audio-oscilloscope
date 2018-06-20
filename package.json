@@ -2,17 +2,18 @@
   "name": "oscilloscope",
   "version": "1.0.0",
   "description": "Waveform audio visualizer for the HTML5 canvas",
-  "main": "lib/oscilloscope.js",
-  "module": "src/main.js",
+  "main": "dist/oscilloscope.js",
+  "module": "dist/oscilloscope.es.js",
   "dependencies": {},
   "devDependencies": {
-    "rollup": "^0.45.2",
-    "rollup-plugin-uglify": "^2.0.1",
-    "rollup-plugin-buble": "^0.15.0"
+    "bili": "^3.1.2",
+    "rimraf": "^2.6.2",
+    "standard": "*"
   },
   "scripts": {
     "test": "standard src/*.js && standard --global Oscilloscope examples/*.js",
-    "build": "rollup -c",
+    "clean": "rimraf dist/*",
+    "build": "npm run clean && bili --js buble --format es,umd,umd-min --moduleName Oscilloscope",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -34,10 +35,9 @@
   },
   "homepage": "https://github.com/mathiasvr/audio-oscilloscope#readme",
   "directories": {
-    "example": "examples",
-    "lib": "lib"
+    "example": "examples"
   },
   "files": [
-    "lib"
+    "dist"
   ]
 }
