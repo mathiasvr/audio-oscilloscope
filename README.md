@@ -1,17 +1,22 @@
 # oscilloscope
 [![npm](https://img.shields.io/npm/v/oscilloscope.svg)](https://www.npmjs.com/package/oscilloscope)
 ![downloads](https://img.shields.io/npm/dt/oscilloscope.svg)
-![dependencies](http://img.shields.io/:dependencies-none-green.svg)
-[![license](http://img.shields.io/:license-MIT-blue.svg)](http://mvr.mit-license.org)
+![dependencies](https://img.shields.io/:dependencies-none-green.svg)
+[![license](https://img.shields.io/:license-MIT-blue.svg)](https://mvr.mit-license.org)
 
 Waveform audio visualizer for the HTML5 canvas.
 
-![dependencies](wave.gif)
+![wave](wave.gif)
 
 ## install
-Add the `oscilloscope.min.js` script to your HTML, or import the module and bundle it for the browser with your favorite module bundler.
-```bash
+Import the module and bundle it for the browser with your favorite module bundler,
+```
 $ npm install oscilloscope
+```
+
+or include it directly in your HTML:
+```html
+<script src="//unpkg.com/oscilloscope@1.1.0/dist/oscilloscope.min.js"></script>
 ```
 
 ## example
