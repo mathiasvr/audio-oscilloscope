@@ -2,19 +2,20 @@
   "name": "oscilloscope",
   "version": "1.1.0",
   "description": "Waveform audio visualizer for the HTML5 canvas",
+  "source": "src/index.js",
   "main": "dist/oscilloscope.js",
-  "module": "dist/oscilloscope.es.js",
+  "module": "dist/oscilloscope.module.js",
+  "unpkg": "dist/oscilloscope.umd.js",
   "dependencies": {},
   "devDependencies": {
-    "bili": "^3.4.2",
     "microbundle": "^0.12.0",
     "rimraf": "^3.0.2",
-    "standard": "^14.3.4"
+    "standard": "*"
   },
   "scripts": {
     "test": "standard src/*.js && standard --global Oscilloscope examples/*.js",
     "clean": "rimraf dist/*",
-    "build": "npm run clean && bili --js buble --format es,umd,umd-min --moduleName Oscilloscope",
+    "build": "npm run clean && microbundle --name Oscilloscope",
     "prepare": "npm run build"
   },
   "repository": {
