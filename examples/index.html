@@ -7,17 +7,32 @@
       margin: 0;
       background-color: #1a1a1a;
       color: #dddddd;
+      text-align: center;
     }
     canvas {
       display: block;
     }
+    button {
+      margin-top: 100px;
+      padding: 1em 2em;
+      font-size: 1.5em;
+    }
   </style>
 </head>
 <body>
-  <script src="../dist/oscilloscope.min.js"></script>
+  <button>Start Example</button>
+  <script src="../dist/oscilloscope.umd.js"></script>
+
   <!-- Examples -->
   <script src="microphone.js"></script>
   <!-- <script src="audio-element.js"></script> -->
   <!-- <script src="custom.js"></script> -->
+
+  <script>
+    document.querySelector('button').addEventListener('click', function() {
+      document.querySelector('button').style.display = 'none';
+      startExample();
+    })
+  </script>
 </body>
 </html>
