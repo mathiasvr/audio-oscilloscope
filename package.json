@@ -8,7 +8,7 @@
   "unpkg": "dist/oscilloscope.umd.js",
   "dependencies": {},
   "devDependencies": {
-    "microbundle": "^0.12.0",
+    "microbundle": "^0.12.3",
     "rimraf": "^3.0.2",
     "standard": "*"
   },

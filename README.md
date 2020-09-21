@@ -16,7 +16,7 @@ $ npm install oscilloscope
 
 or include it directly in your HTML:
 ```html
-<script src="https://unpkg.com/oscilloscope@1.2.0/dist/oscilloscope.umd.js"></script>
+<script src="https://unpkg.com/oscilloscope@1.2.0"></script>
 ```
 
 ## example
