@@ -12,7 +12,7 @@ export default class Oscilloscope {
     }
 
     if (options.fftSize) { this.analyser.fftSize = options.fftSize }
-    this.timeDomain = new Uint8Array(this.analyser.frequencyBinCount)
+    this.timeDomain = new Uint8Array(this.analyser.fftSize)
     this.drawRequest = 0
   }
 
