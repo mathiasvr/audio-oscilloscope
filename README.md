@@ -16,7 +16,7 @@ $ npm install oscilloscope
 
 or include it directly in your HTML:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/oscilloscope@1.x/dist/oscilloscope.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/oscilloscope@1.x"></script>
 ```
 
 ## example
@@ -41,7 +41,10 @@ See the [examples](examples) folder for more details on how to customize the ani
 ### `scope = new Oscilloscope(source [, { fftSize: 2048 }])`
 Supply an [AudioNode](https://developer.mozilla.org/en-US/docs/Web/API/AudioNode) as `source`.
 
-Optionally set the `fftSize` property of the internal [AnalyzerNode](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize). For more control supply an AnalyzerNode as `source`.
+Optionally set the `fftSize` property of the internal [AnalyzerNode](https://developer.mozilla.org/en-US/docs/Web/API/AnalyserNode/fftSize).
+This can be used to adjust the smoothness or resolution of the animated oscilloscope.
+
+For more control supply an AnalyzerNode as `source`.
 
 #### `scope.draw(context [, x, y, width, height])`
 Draw oscilloscope to a canvas `context`, and optionally set position and dimensions.
