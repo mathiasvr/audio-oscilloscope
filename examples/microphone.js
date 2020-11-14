@@ -3,26 +3,26 @@ function startExample () {
   navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||
                           navigator.mozGetUserMedia || navigator.msGetUserMedia
 
-  var audioContext = new window.AudioContext()
+  const audioContext = new window.AudioContext()
 
   // setup canvas
-  var canvas = document.createElement('canvas')
+  const canvas = document.createElement('canvas')
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
   document.body.appendChild(canvas)
 
   // customize drawing options
-  var ctx = canvas.getContext('2d')
+  const ctx = canvas.getContext('2d')
   ctx.lineWidth = 2
   ctx.strokeStyle = '#ffffff'
 
   // get user microphone
-  var constraints = { video: false, audio: true }
+  const constraints = { video: false, audio: true }
   navigator.getUserMedia(constraints, function (stream) {
-    var source = audioContext.createMediaStreamSource(stream)
+    const source = audioContext.createMediaStreamSource(stream)
 
     // attach oscilloscope
-    var scope = new Oscilloscope(source)
+    const scope = new Oscilloscope(source)
 
     // start default animation loop
     scope.animate(ctx)

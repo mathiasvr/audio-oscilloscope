@@ -1,28 +1,28 @@
 function startExample () {
-  var audioContext = new window.AudioContext()
+  const audioContext = new window.AudioContext()
 
   // setup canvas
-  var canvas = document.createElement('canvas')
+  const canvas = document.createElement('canvas')
   canvas.width = window.innerWidth
   canvas.height = window.innerHeight
   document.body.appendChild(canvas)
 
   // setup audio element
-  var audioElement = document.createElement('audio')
+  const audioElement = document.createElement('audio')
   audioElement.autoplay = true
   audioElement.src = 'audio.mp3'
   document.body.appendChild(audioElement)
 
   // create source from html5 audio element
-  var source = audioContext.createMediaElementSource(audioElement)
+  const source = audioContext.createMediaElementSource(audioElement)
 
   // attach oscilloscope
-  var scope = new Oscilloscope(source)
+  const scope = new Oscilloscope(source)
 
   // reconnect audio output to speakers
   source.connect(audioContext.destination)
 
-  var ctx = canvas.getContext('2d')
+  const ctx = canvas.getContext('2d')
   ctx.lineWidth = 3
   ctx.shadowBlur = 4
   ctx.shadowColor = 'white'
@@ -31,8 +31,8 @@ function startExample () {
   function drawLoop () {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-    var centerX = canvas.width / 2
-    var centerY = canvas.height / 2
+    const centerX = canvas.width / 2
+    const centerY = canvas.height / 2
 
     // draw circle
     ctx.beginPath()
