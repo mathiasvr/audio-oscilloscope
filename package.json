@@ -4,19 +4,21 @@
   "description": "Waveform audio visualizer for the HTML5 canvas",
   "source": "src/index.js",
   "main": "dist/oscilloscope.js",
-  "module": "dist/oscilloscope.module.js",
-  "unpkg": "dist/oscilloscope.umd.js",
+  "module": "src/index.js",
   "dependencies": {},
   "devDependencies": {
     "microbundle": "^0.12.4",
     "rimraf": "^3.0.2",
-    "standard": "^16.0.2"
+    "standard": "^16.0.2",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
   },
   "scripts": {
     "test": "standard src/*.js && standard --global Oscilloscope examples/*.js",
     "clean": "rimraf dist/*",
-    "build": "npm run clean && microbundle --name Oscilloscope",
-    "prepare": "npm run build"
+    "build": "microbundle --format=cjs",
+    "bundle": "webpack --entry=./dist/oscilloscope.js --devtool=source-map --output-library=Oscilloscope --output-filename=oscilloscope.min.js",
+    "prepare": "npm run clean && npm run build && npm run bundle"
   },
   "repository": {
     "type": "git",
